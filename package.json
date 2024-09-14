@@ -1,0 +1,54 @@
+{
+  "name": "vue2-unocss",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm serve",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "eslint --ext .js,.vue src",
+    "format": "prettier --write .",
+    "prepare": "husky install",
+    "husky": "husky install && npx husky set .husky/pre-commit \"npx lint-staged\""
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.vue": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{less,css}": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "core-js": "^3.33.3",
+    "element-ui": "^2.15.14",
+    "vue": "2.7.14"
+  },
+  "devDependencies": {
+    "@iconify-json/bxs": "^1.1.7",
+    "@iconify-json/ic": "^1.1.14",
+    "@unocss/preset-icons": "^0.57.6",
+    "@unocss/preset-uno": "^0.57.6",
+    "@unocss/reset": "^0.57.6",
+    "@unocss/transformer-directives": "^0.57.6",
+    "@unocss/webpack": "^0.57.6",
+    "@vue/cli-plugin-babel": "~5.0.8",
+    "@vue/cli-service": "~5.0.8",
+    "eslint": "^8.54.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-define-config": "^2.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-vue": "^9.18.1",
+    "husky": "^8.0.3",
+    "prettier": "^3.1.0",
+    "sass": "^1.69.5",
+    "sass-loader": "^13.3.2",
+    "unocss": "^0.57.6",
+    "vue-template-compiler": "^2.7.14"
+  }
+}
