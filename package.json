@@ -49,6 +49,7 @@
     "sass": "^1.69.5",
     "sass-loader": "^13.3.2",
     "unocss": "^0.57.6",
+    "vite": "^2.9.0",
     "vue-template-compiler": "^2.7.14"
   }
 }
