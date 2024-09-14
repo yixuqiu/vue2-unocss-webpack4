@@ -1,19 +1,16 @@
-// const { defineConfig } = require('@vue/cli-service');
-const UnoCSS = require('@unocss/webpack').default;
+const process = require('node:process')
+const UnoCSS = require('@unocss/webpack').default
 
 module.exports = {
   configureWebpack: {
     devtool: 'inline-source-map',
     plugins: [
-      UnoCSS()
-    ],
-    optimization: {
-      realContentHash: true
-    }
+      UnoCSS({})
+    ]
   },
   chainWebpack(config) {
-    config.module.rule('vue').uses.delete('cache-loader')
-    config.module.rule('tsx').uses.delete('cache-loader')
+    // config.module.rule('vue').uses.delete('cache-loader')
+    // config.module.rule('tsx').uses.delete('cache-loader')
     config.merge({
       cache: false
     })
@@ -21,9 +18,9 @@ module.exports = {
   css: {
     extract: process.env.NODE_ENV === 'development'
       ? {
-          filename: 'css/[name].css',
-          chunkFilename: 'css/[name].css'
+          filename: '[name].css',
+          chunkFilename: '[name].[hash:9].css',
         }
-      : true
+      : true,
   },
 };
